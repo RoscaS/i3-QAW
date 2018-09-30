@@ -3,12 +3,11 @@ from settings import has_launcher
 import i3ipc
 
 
-
 class Quake(object):
-    def __init__(self, app_name):
+    def __init__(self, class_name, launcher_name):
         self.i3 = i3ipc.Connection()
-        self.app_name = app_name
-        self.class_name = app_name.capitalize()
+        self.class_name = class_name
+        self.app_name = launcher_name
         self.con = self.is_app_running()
         if (self.con):
             self.toggle_app()
@@ -46,7 +45,7 @@ class Quake(object):
 
     def resize(self):
         current_wp = I3().current_wp(self.i3)
-        self.width = int(current_wp.rect.width + 2)
+        self.width = int(current_wp.rect.width)
         self.height = int(current_wp.rect.height / 2.5)
         return f'resize set {self.width} {self.height}'
 
