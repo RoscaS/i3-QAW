@@ -17,7 +17,9 @@
 * Clone and drop anywhere (why not in the i3 config file?)
 * `sudo chmod a+x ./i3QAW.py`
 * Set a keybind in your i3 config file and specify the window class (you can use [xprop](https://www.archlinux.org/packages/extra/x86_64/xorg-xprop/) shell command to help you) you wish to quake
-    * `bindsym $alt+w exec "/home/username/.config/i3/i3QAW.py WindowClass"`
+    * `bindsym $alt+w exec "$HOME/.config/i3/i3QAW.py WindowClass"`
+* Optionally you can specify the app launcher, if you want to toggle a specify website
+  * `bindsym $alt+ctrl+w exec "$HOME/.config/i3/i3QAW.py Chromium --app=http://devdocs.io"`
 
 ## Usage
 * Pick the window of the same classe name as the one you specified in your keybind (i3 confi) and float it
